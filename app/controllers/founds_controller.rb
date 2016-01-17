@@ -1,11 +1,16 @@
 class FoundsController < ApplicationController
 
-  # load_and_authorize_resource
+  load_and_authorize_resource
   before_action :set_found, only: [:show, :edit, :update, :destroy]
 
   # GET /founds
   def index
-    @founds = Found.all
+    # @founds = Found.all
+    # @founds = Found.order("title").page(params[:id])
+    # @founds = Found.all
+    # @founds = @founds.paginate(:page => 1, :per_page => 2)
+    
+    @founds = Found.paginate(:page => params[:page], :per_page => 3).order('id DESC')
   end
 
   # GET /founds/1

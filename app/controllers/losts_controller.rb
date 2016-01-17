@@ -5,7 +5,8 @@ class LostsController < ApplicationController
 
   # GET /losts
   def index
-    @losts = Lost.all
+    # @losts = Lost.all
+    @losts = Lost.paginate(:page => params[:page], :per_page => 3).order('id DESC')
   end
 
   # GET /losts/1

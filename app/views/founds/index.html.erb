@@ -1,5 +1,22 @@
 
 <%= render @founds %><br>
+<%= will_paginate @founds %>
+
+<%#= will_paginate @founds, renderer: BootstrapPagination::Rails %>
+
 
 <%= link_to 'New Found', new_found_path if can? :create, Found %>
+
+
+
 <%#= link_to 'New Found', new_found_path %>
+
+<%# if @founds.previous_page %>
+<%#= link_to "<Previous", params.merge(:page => @founds.previous_page)  %>
+<%# end %>
+
+<!-- Page <%= @founds.current_page %> of <%= @founds.total_pages %> -->
+
+<%# if @founds.next_page %>
+<%#= link_to ">Next", params.merge(:page => @founds.next_page)  %>
+<%# end %>
