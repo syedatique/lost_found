@@ -1,0 +1,18 @@
+
+<div class="container">
+  <ul>
+    <li>Image: <span><%= image_tag lost.lost_img.medium.url %></span></li>
+    <li>Title: <span><%= lost.title %></span></li>
+    <li>Category: <span></span><%= lost.category.try(:name) %></li>
+    <li>Date: <span><%= lost.lost_date %></span></li>
+    <li>Location: <span><%= lost.location %></span></li>
+    <li>Description: <span><%= "#{lost.description[0...20]}........"  %></span></li>
+    <li>Contact info: <span><%= lost.contact_info %></span></li>
+    <li>Reward: <span><%= lost.reward %></span></li>
+  </ul>
+  <div>
+    <%= link_to 'Show', lost %>
+    <%= link_to 'Edit', edit_lost_path(lost) if can? :manage, Lost %>
+    <%= link_to 'Destroy', lost_path(lost), method: :delete, data:{ confirm: 'Delete the Lost Ad. Are you sure?'} if can? :delete, Lost %>
+  </div>
+</div>

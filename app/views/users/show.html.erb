@@ -1,0 +1,21 @@
+<!-- <img class="bg" src="http://i252.photobucket.com/albums/hh27/OZ-Insanity/theater_zpstxpof3ik.jpg" alt=""> -->
+
+<div>
+  <% if current_user.user_img == nil %>
+    <img src="/user_profile/default-user-image.png" style="width:50%;border-radius:50%;">
+  <% else %>
+    <%= image_tag current_user.user_img.medium.url %>
+  <% end %>
+</div>
+
+<div>
+<p><strong>Username: </strong><%= current_user.username %></p>
+<p><strong>Name: </strong><%= current_user.name %></p>
+<p><strong>Email: </strong><%= current_user.email %></p>
+<p><strong>User Location: </strong><%= current_user.try(:user_location) %></p>
+</div>
+
+<div class="edit_profile_link">
+  <%= link_to "Edit Profile", edit_user_registration_path %>
+</div>
+</div>

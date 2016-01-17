@@ -1,0 +1,49 @@
+<p>
+  <strong>Lost img:</strong>
+  <%#= @lost.lost_img %>
+  <%= link_to image_tag(@lost.lost_img.thumb.url)%>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  - <%= @lost.category.try(:name) %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @lost.title %>
+</p>
+
+<p>
+  <strong>Lost date:</strong>
+  <%= @lost.lost_date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @lost.location %>
+</p>
+
+<p>
+  <strong>Description: </strong>
+  <%= @lost.description %>
+</p>
+
+<p>
+  <strong>Submitted by: </strong>
+  <%= @lost.user.try(:username) %> on <%= (@lost.created_at).strftime("%d %B %Y") %>
+</p>
+
+<p>
+  <strong>Reward:</strong>
+  <%= @lost.reward %>
+</p>
+
+<p>
+  <strong>Contact info:</strong>
+  <%= @lost.contact_info %>
+</p>
+
+
+<%= link_to 'Edit', edit_lost_path(@lost) if can? :update, Lost  %>
+<%= link_to 'Back', losts_path %>

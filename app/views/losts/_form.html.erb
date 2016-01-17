@@ -1,0 +1,15 @@
+<%= form_for(@lost) do |f| %>
+
+<%= simple_form_for(@lost, defaults: { input_html: { class: 'form-horizontal'}}) do |f| %>
+<%= f.error_notification  %>
+<%= f.input :lost_img, label: 'Lost Image'  %>
+<%= f.association :category, as: :radio_buttons  %>
+<%= f.input :title, label: 'Title', error: 'Title is mandatory, please specify one'  %>
+<%= f.input :lost_date, label: 'Lost Date'  %>
+<%= f.input :location, label: 'Location', hint:'Try to be specific as much as possible'  %>
+<%= f.input :description, label: 'Description', hint: 'The more information you provide, the more chance you have to reach the owner ---'  %>
+<%= f.input :contact_info, label: 'Contact Info', placeholder: 'pls provide address with postcode, email address and telephone number'  %>
+<%= f.input :reward, label: 'Reward' %>
+<%= f.error  :base  %>
+<%= f.button  :submit, "Submit"  %>
+<% end  %>

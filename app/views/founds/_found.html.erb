@@ -1,0 +1,17 @@
+
+<div class="container">
+  <ul>
+    <li>Image: <span><%= image_tag found.found_img.medium.url %></span></li>
+    <li>Title: <span><%= found.title %></span></li>
+    <li>Category: <span></span><%= found.category.try(:name) %></li>
+    <li>Date: <span><%= found.found_date %></span></li>
+    <li>Location: <span><%= found.location %></span></li>
+    <li>Description: <span><%= "#{found.description[0...20]}........"  %></span></li>
+    <li>Contact info: <span><%= found.contact_info %></span></li>
+  </ul>
+  <div>
+    <%= link_to 'Show', found %>
+    <%= link_to 'Edit', edit_found_path(found) if can? :manage, Found %>
+    <%= link_to 'Destroy', found_path(found), method: :delete, data:{ confirm: 'Delete the Found Ad. Are you sure?'} if can? :delete, Found %>
+  </div>
+</div>

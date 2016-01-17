@@ -1,0 +1,45 @@
+
+
+<p>
+  <strong>Found image:</strong>
+  <%= link_to image_tag(@found.found_img.thumb.url)%>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  - <%= @found.category.try(:name) %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @found.title %>
+</p>
+
+<p>
+  <strong>Found date:</strong>
+  <%= @found.found_date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @found.location %>
+</p>
+
+<p>
+  <strong>Description: </strong>
+  <%= @found.description %>
+</p>
+
+<p>
+  <strong>Submitted by: </strong>
+  <%= @found.user.try(:username) %> on <%= (@found.created_at).strftime("%d %B %Y") %>
+</p>
+
+
+<p>
+  <strong>Contact info:</strong>
+  <%= @found.contact_info %>
+</p>
+
+<%= link_to 'Edit', edit_found_path(@found) if can? :update, Found  %> |
+<%= link_to 'Back', founds_path %>
