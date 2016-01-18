@@ -1,6 +1,6 @@
 
 <%= render @losts %><br>
-<%= will_paginate @founds %>
+<%= will_paginate @losts %>
 
 <%= link_to 'New Lost', new_lost_path if can? :create, Lost %>
 <%#= link_to 'New Lost', new_lost_path %>

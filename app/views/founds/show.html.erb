@@ -1,4 +1,5 @@
-<%= social_share_button_tag(found.title, :url => "http://myapp.com/foo/bar") %>
+<%= social_share_button_tag(@found.title, :url => "http://myapp.com/foo/bar") %>
+
 
 <p>
   <strong>Found image:</strong>
@@ -41,5 +42,11 @@
   <%= @found.contact_info %>
 </p>
 
-<%= link_to 'Edit', edit_found_path(@found) if can? :update, Found  %> |
+<p>
+  Comments:
+  <%= render "comments/comments"  %>
+  <%= render "comments/form"  %>
+</p>
+
+<%= link_to 'Edit', edit_found_path(@found) if can? :update, Found  %> 
 <%= link_to 'Back', founds_path %>

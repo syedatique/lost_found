@@ -11,6 +11,9 @@ class LostsController < ApplicationController
 
   # GET /losts/1
   def show
+    @commentable = @lost
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   # GET /losts/new
@@ -40,7 +43,6 @@ class LostsController < ApplicationController
     respond_to do |format|
       if @lost.update(lost_params)
         format.html { redirect_to @lost, notice: 'Lost was successfully updated.' }
-        format.json { render :show, status: :ok, location: @lost }
       else
         format.html { render :edit }
       end
@@ -63,6 +65,6 @@ class LostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lost_params
-      params.require(:lost).permit(:lost_img, :title, :lost_date, :location, :description, :reward, :user_id, :contact_info, :category_id)
+      params.require(:lost).permit(:lost_img, :title, :lost_date, :location, :description, :reward, :user_id, :contact_info, :category_id, comments_attributes: :content)
     end
 end

@@ -1,6 +1,13 @@
 
 <div class="container">
   <ul>
+  <li>
+    <%# if found.comments.any? %>
+      
+        (<%#= pluralize(found.comments.count, "comment") %>)
+      
+    <%# end %>
+  </li>
     <li>Image: <span><%= image_tag found.found_img.medium.url %></span></li>
     <li>Title: <span><%= found.title %></span></li>
     <li>Category: <span></span><%= found.category.try(:name) %></li>

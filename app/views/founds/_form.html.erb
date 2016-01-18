@@ -2,7 +2,9 @@
 <%#= simple_form_for @user, defaults: { input_html: { class: 'form-horizontal' } } do |f| %>
 
 
-<%= simple_form_for(@found, defaults: { input_html: { class: 'form-horizontal'}}) do |f| %>
+
+
+<%= simple_form_for(@found.with_blank_comment, defaults: { input_html: { class: 'form-horizontal'}}) do |f| %>
 <%= f.error_notification  %>
 <%= f.input :found_img, label: 'Found Image'  %>
 <%= f.association :category, as: :radio_buttons  %>
@@ -12,6 +14,19 @@
 <%= f.input :description, label: 'Description', hint: 'The more information you provide, the more chance you have to reach the owner ---'  %>
 <%= f.input :contact_info, label: 'Contact Info', placeholder: 'pls provide address with postcode, email address and telephone number'  %>
 <%= f.error  :base  %>
+
+<%#= f.association :comments do |comments_form| %>
+      <div class="field">
+      <%#=  comments_form.label 'Comment:' %>
+      <%#=  comments_form.text_field :content %>
+      <%#=  unless comments_form.object.new_record?
+             comments_form.check_box('_destroy') + comments_form.label('_destroy','Remove')
+            end %>
+      </div>
+  <%# end %>
+
+
+
 <%= f.button  :submit, "Submit"  %>
 <% end  %>
 

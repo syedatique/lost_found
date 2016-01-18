@@ -8,8 +8,14 @@ Rails.application.routes.draw do
   resources :users, only: :show
   
 
-  resources :losts
-  resources :founds
+  resources :losts do 
+    resources :comments
+  end
+  
+  resources :founds do 
+    resources :comments
+  end
+
   resources :categories
   resources :roles
 

@@ -1,4 +1,4 @@
-<%= social_share_button_tag(lost.title, :url => "http://myapp.com/foo/bar") %>
+<%= social_share_button_tag(@lost.title, :url => "http://myapp.com/foo/bar") %>
 <p>
   <strong>Lost img:</strong>
   <%#= @lost.lost_img %>
@@ -43,6 +43,12 @@
 <p>
   <strong>Contact info:</strong>
   <%= @lost.contact_info %>
+</p>
+
+<p>
+  Comments:
+  <%= render "comments/comments"  %>
+  <%= render "comments/form"  %>
 </p>
 
 
