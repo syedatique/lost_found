@@ -8,11 +8,4 @@ class Lost < ActiveRecord::Base
 
   mount_uploader :lost_img, StuffImageUploader
 
-  # accepts_nested_attributes_for :comments,
-  #                                 reject_if:lambda { |attrs|
-  #                                   attrs.all? { |key, value| value.blank? }
-  #                                 },
-  #                                 allow_destroy:true
-
-
 end

@@ -1,6 +1,13 @@
+<% if @losts != nil %>
+  <%= render @losts %><br>
+  <%= will_paginate %>
+<% else %>
+  <%= flash[:alert]  %>
+<% end %>
 
 <%= render @losts %><br>
 <%= will_paginate @losts %>
+
 
 <%= link_to 'New Lost', new_lost_path if can? :create, Lost %>
 <%#= link_to 'New Lost', new_lost_path %>
