@@ -16,8 +16,19 @@
  *= require_self
  */
 
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
 body {
   background-image: url("support.jpeg");
   background-size: cover;
 
+}
+.alert-alert {
+  @extend .alert-warning;
+}
+
+.alert-notice {
+  @extend .alert-info;
 }

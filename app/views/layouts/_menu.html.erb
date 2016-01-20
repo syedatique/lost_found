@@ -1,0 +1,12 @@
+
+<%= form_tag(founds_path, method: "get", class: ' float-left pull-right') do %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Search For Found Items---") %>
+<% end %>
+
+
+
+<%= form_tag(losts_path, method: "get", class: ' float-left pull-left') do %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Search For Lost Items---") %>
+<% end %>

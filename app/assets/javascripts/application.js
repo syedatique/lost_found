@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap
-// require jquery-ui
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require social-share-button
 //= require_tree .
+

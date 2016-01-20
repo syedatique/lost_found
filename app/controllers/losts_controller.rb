@@ -5,8 +5,12 @@ class LostsController < ApplicationController
 
   # GET /losts
   def index
-    # @losts = Lost.all
-    @losts = Lost.paginate(:page => params[:page], :per_page => 3).order('id DESC')
+    flash[:alert] = "No search result found"
+    if params[:name]
+      @losts = Lost.where("title like ?", "%#{params[:name]}%").paginate(:page => params[:page], :per_page => 3).order('id DESC')
+    else
+      @losts = Lost.paginate(:page => params[:page], :per_page => 3).order('id DESC')
+    end
   end
 
   # GET /losts/1

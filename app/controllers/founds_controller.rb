@@ -5,12 +5,12 @@ class FoundsController < ApplicationController
 
   # GET /founds
   def index
-    # @founds = Found.all
-    # @founds = Found.order("title").page(params[:id])
-    # @founds = Found.all
-    # @founds = @founds.paginate(:page => 1, :per_page => 2)
-    
-    @founds = Found.paginate(:page => params[:page], :per_page => 3).order('id DESC')
+    flash[:alert] = "No search result found"
+    if params[:name]
+      @founds = Found.where("title like ?", "%#{params[:name]}%").paginate(:page => params[:page], :per_page => 3).order('id DESC')
+    else
+      @founds = Found.paginate(:page => params[:page], :per_page => 3).order('id DESC')
+    end
   end
 
   # GET /founds/1
