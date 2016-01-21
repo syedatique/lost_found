@@ -5,12 +5,29 @@ class LostsController < ApplicationController
 
   # GET /losts
   def index
-    flash[:alert] = "No search result found"
     if params[:name]
       @losts = Lost.where("title like ?", "%#{params[:name]}%").paginate(:page => params[:page], :per_page => 3).order('id DESC')
+      flash[:notice] = "No search result found".html_safe if @losts.empty?
+    elsif params[:category_id]
+      @losts = Lost.where(:category_id => params[:category_id]).paginate(:page => params[:page], :per_page => 3).order('id DESC')
+      flash[:notice] = "No ad posted in this category".html_safe if @losts.empty?
     else
       @losts = Lost.paginate(:page => params[:page], :per_page => 3).order('id DESC')
     end
+
+    
+      # if params[:category_id]
+      #   @losts = Lost.where(:category_id => params[:category_id]).paginate(:page => params[:page], :per_page => 3).order('id DESC')
+      # else
+      #   @losts = Lost.paginate(:page => params[:page], :per_page => 3).order('id DESC')
+      # end
+ 
+
+    # if params[:name]
+    #   @losts = Lost.where("title like ?", "%#{params[:name]}%").paginate(:page => params[:page], :per_page => 3).order('id DESC')
+    # else
+    #   @losts = Lost.paginate(:page => params[:page], :per_page => 3).order('id DESC')
+    # end
   end
 
   # GET /losts/1

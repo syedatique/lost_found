@@ -6,4 +6,5 @@ class Lost < ActiveRecord::Base
   validates_presence_of :title
 
   mount_uploader :lost_img, StuffImageUploader
+
 end

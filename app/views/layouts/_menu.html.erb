@@ -1,12 +1,20 @@
 
-<%= form_tag(founds_path, method: "get", class: ' float-left pull-right') do %>
-  <%= text_field_tag(:name) %>
-  <%= submit_tag("Search For Found Items---") %>
-<% end %>
-
-
-
-<%= form_tag(losts_path, method: "get", class: ' float-left pull-left') do %>
-  <%= text_field_tag(:name) %>
-  <%= submit_tag("Search For Lost Items---") %>
-<% end %>
+<div class="row form-inline" style="width: 100%;">
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <form class="form-group" role="search">
+      <%= form_tag(losts_path, method: "get") do %>
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      <%= text_field_tag(:name, nil, {placeholder: 'Search for lost items', class: "form-control"}) %>
+      <%= submit_tag("Lost Items", class: 'btn btn-bg btn-primary') %>
+      <% end %>
+    </form>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <form class="form-group" role="search">
+      <%= form_tag(founds_path, method: "get") do %>
+      <%= text_field_tag(:name, nil, {placeholder: 'Search for found items', class: "form-control"}) %>
+      <%= submit_tag("Found Items", class: 'btn btn-bg btn-primary') %>
+      <% end %>
+    </form>
+  </div>
+</div>

@@ -4,25 +4,75 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LostFound</title>
+
+ <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%#= javascript_include_tag 'https://js.stripe.com/v2/' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-  <nav class="navbar navbar-inverse">
-    <div class="container">
+<div class="container-fluid">
+  <nav class="navbar navbar-static-top navbar-dark bg-inverse" id="topnavbar">
+    <div class="container" style="padding: 0 0 10px 10px;">
       <div id="navbar">
-        <ul class="nav navbar-nav">
-          <li><%= link_to "Home", root_path, class: 'btn btn-primary btn-lg' %></li>
-          <li> <%= link_to "Lost Ad", losts_path, class: 'btn btn-primary btn-lg' %></li>
-          <li><%= link_to "Found Ad", founds_path, class: 'btn btn-primary btn-lg' %></li>
-        </ul>
-        <ul class="nav navbar-nav pull-right">
+        <div class="nav navbar-nav pull-left" role="toolbar">
+          <div class="btn-group" role="group" aria-label="First group">
+            <%= link_to "Home", root_path, class: 'btn btn-primary btn-lg' %>
+          </div>
+
+          <div class="btn-group" role="group" aria-label="Second group">
+            <li class="dropdown">
+              <a class="dropdown-toggle btn btn-info btn-lg" data-toggle="dropdown" href="#" role="button"> Lost Ad <span class="caret"></span></a>
+
+              <ul class="dropdown-menu" role="menu">
+                <%= link_to "Show All", losts_path, class: "btn btn-primary-outline dropdown-item" %>
+                <li role="separator" class="divider"></li>
+                <%= link_to "Personal items", losts_path(:category_id=>"#{Category.find_by(name: "Personal items").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Baby/Kids Stuff", losts_path(:category_id=>"#{Category.find_by(name: "Baby/Kids Stuff").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Electrical equipment", losts_path(:category_id=>"#{Category.find_by(name: "Electrical equipment").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Pets", losts_path(:category_id=>"#{Category.find_by(name: "Pets").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Cameras & Camcorders", losts_path(:category_id=>"#{Category.find_by(name: "Cameras & Camcorders").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Jewellery & Watch", losts_path(:category_id=>"#{Category.find_by(name: "Jewellery & Watch").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Books", losts_path(:category_id=>"#{Category.find_by(name: "Books").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Mobile Phones", losts_path(:category_id=>"#{Category.find_by(name: "Mobile Phones").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Tickets", losts_path(:category_id=>"#{Category.find_by(name: "Tickets").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to  "DVD, Blu-Ray & Videos", losts_path(:category_id=>"#{Category.find_by(name: "DVD, Blu-Ray & Videos").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Computers & Laptops", losts_path(:category_id=>"#{Category.find_by(name: "Computers").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <li role="separator" class="divider"></li>
+                <%= link_to "Others", losts_path(:category_id=>"#{Category.find_by(name: "Others").id}"), class: "btn btn-primary-outline dropdown-item" %>
+              </ul>
+            </li>
+          </div>
+          <div class="btn-group" role="group" aria-label="Third group">
+            <li class="dropdown">
+              <a class="dropdown-toggle btn btn-info btn-lg" data-toggle="dropdown" href="#" role="button"> Found Ad <span class="caret"></span></a>
+
+              <ul class="dropdown-menu" role="menu">
+                <%= link_to "Show All", founds_path, class: "btn btn-primary-outline dropdown-item" %>
+                <li role="separator" class="divider"></li>
+                <%= link_to "Personal items", founds_path(:category_id=>"#{Category.find_by(name: "Personal items").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Baby/Kids Stuff", founds_path(:category_id=>"#{Category.find_by(name: "Baby/Kids Stuff").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Electrical equipment", founds_path(:category_id=>"#{Category.find_by(name: "Electrical equipment").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Pets", founds_path(:category_id=>"#{Category.find_by(name: "Pets").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Cameras & Camcorders", founds_path(:category_id=>"#{Category.find_by(name: "Cameras & Camcorders").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Jewellery & Watch", founds_path(:category_id=>"#{Category.find_by(name: "Jewellery & Watch").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Books", founds_path(:category_id=>"#{Category.find_by(name: "Books").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Mobile Phones", founds_path(:category_id=>"#{Category.find_by(name: "Mobile Phones").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Tickets", founds_path(:category_id=>"#{Category.find_by(name: "Tickets").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to  "DVD, Blu-Ray & Videos", founds_path(:category_id=>"#{Category.find_by(name: "DVD, Blu-Ray & Videos").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <%= link_to "Computers & Laptops", founds_path(:category_id=>"#{Category.find_by(name: "Computers").id}"), class: "btn btn-primary-outline dropdown-item" %>
+                <li role="separator" class="divider"></li>
+                <%= link_to "Others", founds_path(:category_id=>"#{Category.find_by(name: "Others").id}"), class: "btn btn-primary-outline dropdown-item" %>
+              </ul>
+            </li>
+          </div>
+        </div>
+
+        <div class="nav navbar-nav pull-right">
           <% if user_signed_in? %>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <a class="dropdown-toggle btn btn-success btn-sm" data-toggle="dropdown" href="#" role="button">
                 <%= current_user.name %>
                 <span class="caret"></span>
               </a>
@@ -36,16 +86,23 @@
             <li><%= link_to 'Log In', new_user_session_path %></li>
             <li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <% end %>
-        </ul>
+        </div>
       </div>
     </div>
   </nav>
-  </div>
-  <div class="container">
-    <%= render partial: "layouts/menu"%>
-  </div>
 
-<%= yield %>
+  <section class = "jumbotron text-xs-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">SEARCH</h1>
+      <p class="lead text-muted"> This is to put descriopn of searching </p>
+        <%= render partial: "layouts/menu"%>
+    </div>
+  </section>
+  
+
+
+  <%= yield %>
+
 
   <div class="container">
     <% flash.each do |key, value| %>
@@ -54,14 +111,18 @@
       </div>
     <% end %>
   </div>
-<!--   <p class="notice"><%#= notice %></p>
-  <p class="alert"><%#= alert %></p> -->
-
-  <div class="container"><br>
-  <%= social_share_button_tag("My Home Page", :url => "http://syedatique.github.io/", class: 'form-block') %>
-  </div>
-  
 
 
+  <footer class="footer">
+    <div class="container">
+      <ul class="nav nav-pills">
+        <li><a class: 'btn btn-danger btn-sm' role="group" href="#">About</a></li>
+        <li><a class: 'btn btn-danger btn-sm' role="group" href="#">Profile</a></li>
+        <li><a class: 'btn btn-danger btn-sm' role="group" href="#">Contact</a></li>
+        <li style="margin: 15px 15px 50px 50px;"><%= social_share_button_tag("My Home Page", :url => "http://syedatique.github.io/") %></li>
+      </ul>
+    </div>
+  </footer>
+</div>
 </body>
 </html>
