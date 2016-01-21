@@ -1,50 +1,27 @@
-<%= social_share_button_tag(@lost.title, :url => "http://syedatique.github.io/") %>
-<p>
-  <strong>Lost img:</strong>
-  <%#= @lost.lost_img %>
-  <%= link_to image_tag(@lost.lost_img.thumb.url)%>
-</p>
+<div class="container home">
+  <div class="row">
+    <div class="col-sm-6 col-md-12">
+      <div class="container" id="index-page">
+        <div class="thumbnail" >
+          <%= image_tag @lost.lost_img.medium.url, class:"img-responsive img-rounded" %>
+          <div class="caption">
+            <h3 class="bg-default" style="text-align: center;"><%= @lost.title %></h3>
+            <p class="bg-success"><strong>Category:</strong> <%= @lost.category.try(:name) %></p>
+            <p class="bg-info"><strong>Date:</strong> <%= @lost.lost_date %></p>
+            <p class="bg-warning"><strong>Location:</strong> <%= @lost.location %></p>
+            <p class="bg-danger"><strong>Description:</strong> <%= @lost.description %></p>
+            <p class="bg-default"><strong>Contact info:</strong> <%= @lost.contact_info %></p>
+            <p class="bg-info"><strong>Submitted by: </strong>
+            <%= @lost.user.try(:username) %> on <%= (@lost.created_at).strftime("%d %B %Y") %></p>
+            <p class="bg-success"><strong>Reward:</strong> <%= @lost.reward %></p>
+          </div>
+          <div class="thumbnail" style="border:none;">
+            <%= link_to 'Edit', edit_lost_path(@lost), class: 'btn btn-info' if can? :update, Lost %>
+            <%= link_to 'Back', losts_path, class: 'btn btn-info' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Category:</strong>
-  - <%= @lost.category.try(:name) %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @lost.title %>
-</p>
-
-<p>
-  <strong>Lost date:</strong>
-  <%= @lost.lost_date %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @lost.location %>
-</p>
-
-<p>
-  <strong>Description: </strong>
-  <%= @lost.description %>
-</p>
-
-<p>
-  <strong>Submitted by: </strong>
-  <%= @lost.user.try(:username) %> on <%= (@lost.created_at).strftime("%d %B %Y") %>
-</p>
-
-<p>
-  <strong>Reward:</strong>
-  <%= @lost.reward %>
-</p>
-
-<p>
-  <strong>Contact info:</strong>
-  <%= @lost.contact_info %>
-</p>
-
-
-<%= link_to 'Edit', edit_lost_path(@lost) if can? :update, Lost  %>
-<%= link_to 'Back', losts_path %>

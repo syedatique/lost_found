@@ -1,6 +1,8 @@
-<h1>Editing Found</h1>
+<h2>Updating the post</h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @found %> |
-<%= link_to 'Back', founds_path %>
+<div class="thumbnail" style="border:none;">
+  <%= link_to 'Show', @found, class: 'btn btn-success' %>
+  <%= link_to 'Back', founds_path, class: 'btn btn-info' %>
+</div>

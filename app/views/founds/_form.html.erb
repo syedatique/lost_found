@@ -1,13 +1,24 @@
-<%= simple_form_for(@found, defaults: { input_html: { class: 'form-horizontal'}}) do |f| %>
-<%= f.error_notification  %>
-<%= f.input :found_img, label: 'Found Image'  %>
-<%= f.association :category, as: :radio_buttons  %>
-<%= f.input :title, label: 'Title', error: 'Title is mandatory, please specify one'  %>
-<%= f.input :found_date, label: 'Found Date'  %>
-<%= f.input :location, label: 'Location', hint:'Try to be specific as much as possible'  %>
-<%= f.input :description, label: 'Description', hint: 'The more information you provide, the more chance you have to reach the owner ---'  %>
-<%= f.input :contact_info, label: 'Contact Info', placeholder: 'pls provide address with postcode, email address and telephone number'  %>
-<%= f.error  :base  %>
-<%= f.button  :submit, "Submit", class: 'btn btn-success'  %>
-<% end  %>
+<div class="container home">
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div class="container" id="index-page">
+        <!-- <div class="thumbnail"> -->
+          <div class="form-group">
+            <%= simple_form_for(@found, defaults: { input_html: { class: 'form-horizontal'}}) do |f| %>
+            <%= f.error_notification  %>
+            <%= f.input :found_img, label: 'Found Image', class: 'form-control'  %>
+            <%= f.association :category, as: :radio_buttons , hint: 'Please select an catagory' %>
+            <%= f.input :title, label: 'Title', placeholder: 'Title is mandatory, please specify one', error: 'Title is mandatory, please specify one'  , class: 'form-control'%>
+            <%= f.input :found_date, label: 'Found Date', class: 'form-control'  %>
+            <%= f.input :location, label: 'Location', placeholder:'Try to be specific as much as possible', class: 'form-control'  %>
+            <%= f.input :description, label: 'Description', placeholder: 'The more information you provide, the more chance you have to reach the owner ---' , class: 'form-control' %>
+            <%= f.input :contact_info, label: 'Contact Info', placeholder: 'pls provide address with postcode, email address and telephone number', class: 'form-control'  %>
+            <%= f.error :base, class: 'form-control' %>
+            <%= f.button :submit, "Submit", class: 'btn btn-success'  %>
+            <% end  %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 

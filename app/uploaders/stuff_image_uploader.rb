@@ -9,7 +9,7 @@ class StuffImageUploader < CarrierWave::Uploader::Base
   end
 
   version :medium do
-    process :resize_to_fit => [350, 350]
+    process :resize_to_fit => [250, 250]
   end
 
   version :gridlist do
@@ -48,9 +48,9 @@ class StuffImageUploader < CarrierWave::Uploader::Base
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  # def extension_white_list
-  #   %w(jpg jpeg gif png)
-  # end
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

@@ -1,20 +1,22 @@
 
 <div class="row form-inline" style="width: 100%;">
-<div class="col-md-6 col-sm-6 col-xs-12">
-    <form class="form-group" role="search">
-      <%= form_tag(losts_path, method: "get") do %>
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <%= form_tag(losts_path, method: "get", class: 'form-group') do %>
+    <button type="button" class="btn btn-default" aria-label="Left Align">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-      <%= text_field_tag(:name, nil, {placeholder: 'Search for lost items', class: "form-control"}) %>
-      <%= submit_tag("Lost Items", class: 'btn btn-bg btn-primary') %>
-      <% end %>
-    </form>
+    </button>
+    <%= text_field_tag(:name, nil, {placeholder:'Search for lost items', class: "form-control"}) %>
+    <%= submit_tag("Lost Items", class: 'btn btn-bg btn-primary') %>
+    <% end %>
+    
   </div>
-  <div class="col-md-6 col-sm-6 col-xs-12">
-    <form class="form-group" role="search">
-      <%= form_tag(founds_path, method: "get") do %>
-      <%= text_field_tag(:name, nil, {placeholder: 'Search for found items', class: "form-control"}) %>
-      <%= submit_tag("Found Items", class: 'btn btn-bg btn-primary') %>
-      <% end %>
-    </form>
+
+  <div class="col-xs-12 col-sm-6 col-md-6">
+
+    <%= form_tag(founds_path, method: "get", class: 'form-group') do %>
+    <%= text_field_tag(:name, nil, {placeholder: 'Search for found items', class: "form-control"}) %>
+    <%= submit_tag("Found Items", class: 'btn btn-bg btn-primary') %>
+    <% end %>
+    
   </div>
 </div>
