@@ -1,9 +1,9 @@
 
+<div class="form-group">
+  <%= simple_form_for [@commentable, @comment], defaults: { input_html: { class: 'form-horizontal'}} do |f| %>
+  <%= f.input :content, label: 'Submit Your Comments', placeholder: 'Your comments will reach to everyone!', class: "list-group-item list-group-item-info" %>
+  <%= f.submit "Submit", class: 'btn btn-success' %>
+  <% end %>
+</div>
 
-<%= form_for [@commentable, @comment] do |f| %>
-  <p>
-    <%#= f.label :content %><br />
-    <%= f.text_area :content, rows: 8 %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
-<% end %>
+

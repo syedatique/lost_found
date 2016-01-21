@@ -7,13 +7,15 @@
           <%= image_tag @found.found_img.medium.url, class:"img-responsive img-rounded" %>
           <div class="caption">
             <h3 class="bg-default" style="text-align: center;"><%= @found.title %></h3>
-            <p class="bg-success"><strong>Category:</strong> <%= @found.category.try(:name) %></p>
-            <p class="bg-info"><strong>Date:</strong> <%= @found.found_date %></p>
-            <p class="bg-warning"><strong>Location:</strong> <%= @found.location %></p>
-            <p class="bg-danger"><strong>Description:</strong> <%= @found.description %></p>
-            <p class="bg-default"><strong>Contact info:</strong> <%= @found.contact_info %></p>
-            <p class="bg-info"><strong>Submitted by: </strong>
-            <%= @found.user.try(:username) %> on <%= (@found.created_at).strftime("%d %B %Y") %></p>
+            <li class="list-group-item list-group-item-info"><strong>Category:</strong> <%= @found.category.try(:name) %></li>
+            <li class="list-group-item list-group-item-info"><strong>Date:</strong> <%= @found.found_date %></li>
+            <li class="list-group-item list-group-item-info"><strong>Location:</strong> <%= @found.location %></li>
+            <li class="list-group-item list-group-item-info"><strong>Description:</strong> <%= @found.description %></li>
+            <li class="list-group-item list-group-item-info"><strong>Contact info:</strong> <%= @found.contact_info %></li>
+            <li class="list-group-item list-group-item-info"><strong>Submitted by: </strong>
+            <%= @found.user.try(:username) %> on <%= (@found.created_at).strftime("%d %B %Y") %></li>
+            <%= render 'comments/comments' %>
+            <%= render 'comments/form' %>
           </div>
           <div class="thumbnail" style="border:none;">
             <%= link_to 'Edit', edit_found_path(@found), class: 'btn btn-info' if can? :update, Lost %>
@@ -24,4 +26,3 @@
     </div>
   </div>
 </div>
-

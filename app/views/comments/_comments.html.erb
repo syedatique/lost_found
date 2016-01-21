@@ -1,6 +1,7 @@
-<div>
-  <% @comments.each do |comment| %>
-  <%= simple_format comment.content  %>
-  <% end %>
 
-</div>
+<p class="bg-success"><strong>Comments:</strong></p>
+<% @comments.each do |comment| %>
+<li class="list-group-item list-group-item-info"><%= simple_format comment.content %></li>
+<!-- <p class="bg-info"><strong>Submitted by: </strong> -->
+<!-- <%#= comment.user.try(:username) %> on <%#= (@lost.created_at).strftime("%d %B %Y") %></p> -->
+<% end %>
