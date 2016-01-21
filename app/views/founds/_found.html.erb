@@ -16,7 +16,10 @@
           <div class="thumbnail" style="border:none;">
             <%= link_to 'Show', found, class: 'btn btn-success' %>
             <%= link_to 'Edit', edit_found_path(found), class: 'btn btn-info' if can? :manage, Found %>
-            <%= link_to 'Destroy', found_path(found), method: :delete, data:{ confirm: 'Delete the Found Ad. Are you sure?'}, class: 'btn btn-danger' if can? :delete, Found %>
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+              <%= link_to 'Destroy', found_path(found), method: :delete, data:{ confirm: 'Delete the Found Ad. Are you sure?'} if can? :delete, Found %>
+            </button>
           </div>
         </div>
       </div>
