@@ -1,18 +1,26 @@
-
-<div class="container">
-  <ul>
-    <li>Image: <span><%= image_tag lost.lost_img.medium.url %></span></li>
-    <li>Title: <span><%= lost.title %></span></li>
-    <li>Category: <span></span><%= lost.category.try(:name) %></li>
-    <li>Date: <span><%= lost.lost_date %></span></li>
-    <li>Location: <span><%= lost.location %></span></li>
-    <li>Description: <span><%= "#{lost.description[0...20]}........"  %></span></li>
-    <li>Contact info: <span><%= lost.contact_info %></span></li>
-    <li>Reward: <span><%= lost.reward %></span></li>
-  </ul>
-  <div>
-    <%= link_to 'Show', lost %>
-    <%= link_to 'Edit', edit_lost_path(lost) if can? :manage, Lost %>
-    <%= link_to 'Destroy', lost_path(lost), method: :delete, data:{ confirm: 'Delete the Lost Ad. Are you sure?'} if can? :delete, Lost %>
+<div class="container home">
+  <div class="row">
+    <div class="col-sm-6 col-md-12">
+      <div class="container" id="index-page">
+        <div class="thumbnail" >
+          <%= image_tag lost.lost_img.medium.url, class:"img-responsive img-rounded" %>
+          <div class="caption">
+            <h3 class="bg-default" style="text-align: center;"><%= lost.title %></h3>
+            <p class="bg-success"><b>Category:</b> <%= lost.category.try(:name) %></p>
+            <p class="bg-info"><b>Date:</b> <%= lost.lost_date %></p>
+            <p class="bg-warning"><b>Location:</b> <%= lost.location %></p>
+            <p class="bg-danger"><b>Description:</b> <%= "#{lost.description[0...20]}........"  %></p>
+            <p class="bg-default"><b>Contact info:</b> <%= lost.contact_info %></p>
+            <p class="bg-success"><b>Reward:</b> <%= lost.reward %></p>
+          </div>
+          <div class="thumbnail" style="border:none;">
+            <%= link_to 'Show', lost, class: 'btn btn-success' %>
+            <%= link_to 'Edit', edit_lost_path(lost), class: 'btn btn-info' if can? :manage, Lost %>
+            <%= link_to 'Destroy', lost_path(lost), method: :delete, data:{ confirm: 'Delete the Lost Ad. Are you sure?'}, class: 'btn btn-danger' if can? :delete, Lost %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+

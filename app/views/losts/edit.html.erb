@@ -1,6 +1,9 @@
-<h1>Editing Lost</h1>
+<h2>Updating the post</h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @lost %> |
-<%= link_to 'Back', losts_path %>
+
+<div class="thumbnail" style="border:none;">
+  <%= link_to 'Show', @lost, class: 'btn btn-success' %>
+  <%= link_to 'Back', losts_path, class: 'btn btn-info' %>
+</div>

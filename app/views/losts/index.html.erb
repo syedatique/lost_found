@@ -1,10 +1,9 @@
-<% if @losts != nil %>
-  <%= render @losts %><br>
-  <%= will_paginate %>
-<% else %>
-  <%= flash[:alert]  %>
-<% end %>
+<%= render @losts %>
 
-<%= link_to 'New Lost', new_lost_path if can? :create, Lost %>
-<%#= link_to 'New Lost', new_lost_path %>
+
+<div class="thumbnail" style="border:none;">
+  <%= will_paginate @losts, class: 'btn btn-info pull-right' %>
+  <%= link_to 'Back', losts_path, class: 'btn btn-info pull-left' %>
+</div>
+
 
