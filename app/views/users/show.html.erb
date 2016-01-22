@@ -1,21 +1,25 @@
-<!-- <img class="bg" src="http://i252.photobucket.com/albums/hh27/OZ-Insanity/theater_zpstxpof3ik.jpg" alt=""> -->
+<div class="container home">
+  <div class="row">
+    <div class="col-sm-6 col-md-12">
+      <div class="container" id="user-edit-page">
+        <div class="thumbnail" >
+          <% if current_user.user_img == nil %>
+            <img src="/user_profile/default-user-image.png" class="img-responsive img-circle"">
+          <% else %>
+            <%= image_tag current_user.user_img.medium.url, class:"img-responsive img-circle" %>
+          <% end %>
+          <div class="caption">
+          <li class="list-group-item list-group-item-info"><strong>Username:  </strong> <%= current_user.username %></li>
+          <li class="list-group-item list-group-item-info"><strong>Name:  </strong><%= current_user.name %></li>
+          <li class="list-group-item list-group-item-info"><strong>Email:  </strong><%= current_user.email %></li>
+          <li class="list-group-item list-group-item-info"><strong>User location:  </strong><%= current_user.try(:user_location) %></li>
+          </div>
 
-<div>
-  <% if current_user.user_img == nil %>
-    <img src="/user_profile/default-user-image.png" style="width:50%;border-radius:50%;">
-  <% else %>
-    <%= image_tag current_user.user_img.medium.url %>
-  <% end %>
-</div>
-
-<div>
-<p><strong>Username: </strong><%= current_user.username %></p>
-<p><strong>Name: </strong><%= current_user.name %></p>
-<p><strong>Email: </strong><%= current_user.email %></p>
-<p><strong>User Location: </strong><%= current_user.try(:user_location) %></p>
-</div>
-
-<div class="edit_profile_link">
-  <%= link_to "Edit Profile", edit_user_registration_path %>
-</div>
+          <div class="thumbnail" style="border:none;">
+            <%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-info' if can? :update, User %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

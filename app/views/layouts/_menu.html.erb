@@ -14,6 +14,9 @@
   <div class="col-xs-12 col-sm-6 col-md-6">
 
     <%= form_tag(founds_path, method: "get", class: 'form-group') do %>
+    <button type="button" class="btn btn-default" aria-label="Left Align">
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+    </button>
     <%= text_field_tag(:name, nil, {placeholder: 'Search for found items', class: "form-control"}) %>
     <%= submit_tag("Found Items", class: 'btn btn-bg btn-primary') %>
     <% end %>

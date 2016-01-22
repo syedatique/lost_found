@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LostFound</title>
 
- <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -67,6 +67,25 @@
               </ul>
             </li>
           </div>
+
+          <div class="btn-group" role="group">
+            <% if can? :create, Found %>
+              <%= link_to new_found_path, class: 'btn btn-success btn-lg' do %>
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"> Post FOUND</span>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div class="btn-group" role="group">
+            <% if can? :create, Lost %>
+              <%= link_to new_lost_path, class: 'btn btn-success btn-lg' do %>
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"> Post LOST</span>
+              <% end %>
+            <% end %>
+          </div>
+
+
+
         </div>
 
         <div class="nav navbar-nav pull-right">

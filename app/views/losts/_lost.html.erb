@@ -1,30 +1,17 @@
-<div class="container home">
-  <div class="row">
-    <div class="col-sm-6 col-md-12">
-      <div class="container" id="index-page">
-        <div class="thumbnail" >
-          <%= image_tag lost.lost_img.medium.url, class:"img-responsive img-rounded" %>
-          <div class="caption">
-            <h3 class="bg-default" style="text-align: center;"><%= lost.title %></h3>
-            <p class="bg-success"><b>Category:</b> <%= lost.category.try(:name) %></p>
-            <p class="bg-info"><b>Date:</b> <%= lost.lost_date %></p>
-            <p class="bg-warning"><b>Location:</b> <%= lost.location %></p>
-            <p class="bg-danger"><b>Description:</b> <%= "#{lost.description[0...20]}........"  %></p>
-            <p class="bg-default"><b>Contact info:</b> <%= lost.contact_info %></p>
-            <p class="bg-success"><b>Reward:</b> <%= lost.reward %></p>
-          </div>
-          <div class="thumbnail" style="border:none;">
-            <%= link_to 'Show', lost, class: 'btn btn-success' %>
-            <%= link_to 'Edit', edit_lost_path(lost), class: 'btn btn-info' if can? :manage, Lost %>
-            <button type="button" class="btn btn-default" aria-label="Left Align">
-              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-              <%= link_to 'Destroy', lost_path(lost), method: :delete, data:{ confirm: 'Delete the Lost Ad. Are you sure?'} if can? :delete, Lost %>
-            </button>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="box box-3">
+  <%= image_tag lost.lost_img.medium.url, class:"img-responsive" %>
+  <h3 class="bg-default" style="text-align: center;"><%= lost.title %></h3>
+  <p class="bg-success"><strong>Category:</strong> <%= lost.category.try(:name) %></p>
+  <p class="bg-info"><strong>Date:</strong> <%= lost.lost_date %></p>
+  <p class="bg-warning"><strong>Location:</strong> <%= lost.location %></p>
+  <p class="bg-danger"><strong>Description:</strong> <%= "#{lost.description[0...20]}........"  %></p>
+  <p class="bg-default"><strong>Contact info:</strong> <%= lost.contact_info %></p>
+  <!-- </div> -->
+  <!-- <div class="thumbnail" style="border:none;"> -->
+  <%= link_to 'Show', lost, class: 'btn btn-success' %>
+  <%= link_to 'Edit', edit_lost_path(lost), class: 'btn btn-info' if can? :manage, Lost %>
+  <button type="button" class="btn btn-default" aria-label="Left Align">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      <%= link_to 'Destroy', lost_path(lost), method: :delete, data:{ confirm: 'Delete the Lost Ad. Are you sure?'} if can? :delete, Lost %>
+  </button>
 </div>
-

@@ -1,13 +1,8 @@
-
-
-
-<%= link_to 'New Found', new_found_path if can? :create, Found %>
-
 <% if can? :create, Found %>
   <%= link_to new_found_path, class: 'btn btn-success' do %>
     <span class="glyphicon glyphicon-plus" aria-hidden="true"> Post New AD </span>
   <% end %>
-<% end %>
+<% end %><br />
 
 <%= render @founds %>
 
