@@ -17,6 +17,11 @@
             <%= render 'comments/comments' %>
             <%= render 'comments/form' %>
           </div>
+          <div id="map-container">
+            <div id="map-canvas" data-lostlocation-data="<%= @lost.location  %>" >
+
+            </div>
+          </div>
           <div class="thumbnail" style="border:none;">
             <%= link_to 'Edit', edit_lost_path(@lost), class: 'btn btn-info' if can? :update, Lost %>
             <%= link_to 'Back', losts_path, class: 'btn btn-info' %>
@@ -26,3 +31,4 @@
     </div>
   </div>
 </div>
+
