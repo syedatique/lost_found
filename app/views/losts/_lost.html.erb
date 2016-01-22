@@ -5,7 +5,15 @@
   <p class="bg-info"><strong>Date:</strong> <%= lost.lost_date %></p>
   <p class="bg-warning"><strong>Location:</strong> <%= lost.location %></p>
   <p class="bg-danger"><strong>Description:</strong> <%= "#{lost.description[0...20]}........"  %></p>
-  <p class="bg-default"><strong>Contact info:</strong> <%= lost.contact_info %></p>
+  <p class="bg-default"><strong>Contact info:</strong></p>
+
+  <p class="bg-default"><strong>Name:</strong> <%= lost.name %></p>
+  <p class="bg-default"><strong>Email:</strong> <%= lost.email %></p>
+  <p class="bg-default"><strong>Phone:</strong> <%= lost.phone %></p>
+
+
+
+
   <!-- </div> -->
   <!-- <div class="thumbnail" style="border:none;"> -->
   <%= link_to 'Show', lost, class: 'btn btn-success' %>

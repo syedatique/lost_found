@@ -12,7 +12,12 @@
             <%= f.input :lost_date, label: 'Found Date', class: 'form-control'  %>
             <%= f.input :location, label: 'Location', placeholder:'Try to be specific as much as possible', class: 'form-control'  %>
             <%= f.input :description, label: 'Description', placeholder: 'The more information you provide, the more chance you have to reach others ---' , class: 'form-control' %>
-            <%= f.input :contact_info, label: 'Contact Info', placeholder: 'pls provide address with postcode, email address and telephone number', class: 'form-control'  %>
+
+            <%= f.input :name, label: 'Contact Info:Name', placeholder: 'Please provide your name.', class: 'form-control'  %>
+            <%= f.input :email, label: 'Contact Info:Email', placeholder: 'Please provide email address, if possible.', class: 'form-control'  %>
+            <%= f.input :phone, label: 'Contact Info:Phone', placeholder: 'Please provide telephone number, if possible.', class: 'form-control'  %>
+
+
             <%= f.input :reward, label: 'Reward', placeholder: 'Any reward you are offering?', class: 'form-control' %>
             <%= f.error :base, class: 'form-control' %>
             <%= f.button :submit, "Submit", class: 'btn btn-success'  %>

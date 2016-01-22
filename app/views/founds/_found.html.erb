@@ -5,9 +5,12 @@
   <p class="bg-info"><strong>Date:</strong> <%= found.found_date %></p>
   <p class="bg-warning"><strong>Location:</strong> <%= found.location %></p>
   <p class="bg-danger"><strong>Description:</strong> <%= "#{found.description[0...20]}........"  %></p>
-  <p class="bg-default"><strong>Contact info:</strong> <%= found.contact_info %></p>
-  <!-- </div> -->
-  <!-- <div class="thumbnail" style="border:none;"> -->
+
+  <p class="bg-default"><strong>Contact info:</strong></p>
+  <p class="bg-default"><strong>Name:</strong> <%= found.name %></p>
+  <p class="bg-default"><strong>Email:</strong> <%= found.email %></p>
+  <p class="bg-default"><strong>Phone:</strong> <%= found.phone %></p>
+
   <%= link_to 'Show', found, class: 'btn btn-success' %>
   <%= link_to 'Edit', edit_found_path(found), class: 'btn btn-info' if can? :manage, Found %>
   <button type="button" class="btn btn-default" aria-label="Left Align">

@@ -11,7 +11,12 @@
             <li class="list-group-item list-group-item-info"><strong>Date:</strong> <%= @found.found_date %></li>
             <li class="list-group-item list-group-item-info"><strong>Location:</strong> <%= @found.location %></li>
             <li class="list-group-item list-group-item-info"><strong>Description:</strong> <%= @found.description %></li>
-            <li class="list-group-item list-group-item-info"><strong>Contact info:</strong> <%= @found.contact_info %></li>
+
+            <li><strong>Contact info:</strong></li>
+            <li class="list-group-item list-group-item-info"><strong>Name:</strong> <%= @found.name %></li>
+            <li class="list-group-item list-group-item-info"><strong>Email:</strong> <%= @found.email %></li>
+            <li class="list-group-item list-group-item-info"><strong>Phone:</strong> <%= @found.phone %></li>
+
             <li class="list-group-item list-group-item-info"><strong>Submitted by: </strong>
             <%= @found.user.try(:username) %> on <%= (@found.created_at).strftime("%d %B %Y") %></li>
             <%= render 'comments/comments' %>
