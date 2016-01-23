@@ -1,0 +1,23 @@
+<h2 class="caption">Advanced Search</h2>
+<div class="container home">
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div class="container" id="index-page">
+        <div class="form-group">
+          <%= simple_form_for(@search, defaults: { input_html: { class: 'form-horizontal'}}) do |f| %>
+          <%= f.input :keywords, label: 'Keywords', placeholder: 'e.g., Item name',class: 'form-control'  %>
+          <%= f.input :location, label: 'Location', placeholder: 'Nearby location search.', class: 'form-control'%>
+          <%= f.input :description, label: 'Description', placeholder: 'Search in description field.', class: 'form-control'%>
+          <%= f.input :start_date, label: 'Start Date', class: 'form-control' %>
+          <%= f.input :end_date, label: 'End Date', class: 'form-control' %>
+          <%= f.button :submit, "Submit", class: 'btn btn-success'  %>
+          <% end  %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="thumbnail" style="border:none;">
+  <%= link_to 'Back', new_search_path, class: 'btn btn-info' %>
+</div>

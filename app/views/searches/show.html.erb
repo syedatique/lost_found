@@ -1,0 +1,22 @@
+
+<div class="container home">
+  <div class="row">
+    <div class="col-sm-6 col-md-12">
+      <div class="container" id="index-page">
+        <div class="thumbnail" >
+        
+          <% if @search.search_losts.empty? %>
+          <h3 class="bg-default" style="text-align: center;">No Records Found</h3>
+          <% else %>
+            <% @search.search_losts.each do |c| %>
+          <li class="list-group-item list-group-item-info"><strong>Title: </strong> <%= c.title %></li>
+          <li class="list-group-item list-group-item-info"><strong>Location: </strong> <%= c.location %></li>
+          <li class="list-group-item list-group-item-info"><strong>Description: </strong> <%= c.description %></li>
+          <li class="list-group-item list-group-item-info"><strong>Date: </strong> <%= c.lost_date.strftime("%d %B %Y") %></li>
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
