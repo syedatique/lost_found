@@ -13,6 +13,7 @@ gem 'autoprefixer-rails'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'social-share-button', '~> 0.1.10'
+gem 'pg_search'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -8,4 +8,8 @@ class Lost < ActiveRecord::Base
 
   mount_uploader :lost_img, StuffImageUploader
 
+  include PgSearch
+    pg_search_scope :search, :against => [:name, :location, :description], :using => {
+                    :tsearch => {:prefix => true}}
+
 end

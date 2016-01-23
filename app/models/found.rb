@@ -10,4 +10,8 @@ class Found < ActiveRecord::Base
 
   mount_uploader :found_img, StuffImageUploader
 
+  include PgSearch
+    pg_search_scope :search, :against => [:name, :location, :description], :using => {
+                  :tsearch => {:prefix => true}}
+
 end

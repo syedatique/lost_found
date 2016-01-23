@@ -6,7 +6,7 @@ class FoundsController < ApplicationController
   # GET /founds
   def index
     if params[:name]
-      @founds = Found.where("title like ?", "%#{params[:name]}%").paginate(:page => params[:page], :per_page => 3).order('id DESC')
+      @founds = Found.search("%#{params[:name]}%").paginate(:page => params[:page], :per_page => 3)
       flash[:notice] = "No search result found".html_safe if @founds.empty?
     elsif params[:category_id]
       @founds = Found.where(:category_id => params[:category_id]).paginate(:page => params[:page], :per_page => 3).order('id DESC')
