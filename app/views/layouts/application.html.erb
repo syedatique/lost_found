@@ -75,13 +75,13 @@
 
         <div class="nav navbar-nav " role="toolbar" style="margin-left:270px;">
           <% if can? :create, Lost %>
-            <button type="button" class="btn btn-default" >
+            <button type="button" class="btn btn-default" style="background-color:#5A5C5E; border:none;" >
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             <%= link_to 'Post Lost',new_lost_path, class: 'btn btn-success'%>
             </button> 
           <% end %> <!-- Post Button -->
           <% if can? :create, Found %>
-            <button type="button" class="btn btn-default">
+            <button type="button" class="btn btn-default" style="background-color:#5A5C5E; border:none;">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             <%= link_to 'Post Found',new_found_path, class: 'btn btn-success'%>
             </button> 
