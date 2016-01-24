@@ -5,6 +5,7 @@ class Lost < ActiveRecord::Base
   has_many :comments, :as => :commentable
 
   validates_presence_of :title
+  validates_presence_of :location
 
   mount_uploader :lost_img, StuffImageUploader
 

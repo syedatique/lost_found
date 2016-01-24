@@ -5,9 +5,13 @@
       <div class="container" id="index-page">
         <div class="form-group">
           <%= simple_form_for(@search, defaults: { input_html: { class: 'form-horizontal'}}) do |f| %>
+          <%#= f.input :image, label: 'Image', class: 'form-control'  %>
           <%= f.input :keywords, label: 'Keywords', placeholder: 'e.g., Item name',class: 'form-control'  %>
           <%= f.input :location, label: 'Location', placeholder: 'Nearby location search.', class: 'form-control'%>
           <%= f.input :description, label: 'Description', placeholder: 'Search in description field.', class: 'form-control'%>
+          <%= f.input :name, label: 'Contact Name', placeholder:'Persons name if you know', class: 'form-control'  %>
+          <%= f.input :email, label: 'Contact Email', placeholder: 'Persons email if you know', class: 'form-control'  %>
+          <%= f.input :phone, label: 'Contact Phone', placeholder: 'Persons phone number if you know', class: 'form-control'  %>
           <%= f.input :start_date, label: 'Start Date', class: 'form-control' %>
           <%= f.input :end_date, label: 'End Date', class: 'form-control' %>
           <%= f.button :submit, "Submit", class: 'btn btn-success'  %>

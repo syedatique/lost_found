@@ -12,14 +12,14 @@
   <p class="bg-default"><strong>Phone:</strong> <%= lost.phone %></p>
 
 
-
-
-  <!-- </div> -->
-  <!-- <div class="thumbnail" style="border:none;"> -->
   <%= link_to 'Show', lost, class: 'btn btn-success' %>
   <%= link_to 'Edit', edit_lost_path(lost), class: 'btn btn-info' if can? :manage, Lost %>
-  <button type="button" class="btn btn-default" aria-label="Left Align">
+
+  <% if can? :delete, Lost %>
+    <button type="button" class="btn btn-default" aria-label="Left Align">
       <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-      <%= link_to 'Destroy', lost_path(lost), method: :delete, data:{ confirm: 'Delete the Lost Ad. Are you sure?'} if can? :delete, Lost %>
-  </button>
+      <%= link_to 'Destroy', lost_path(lost), method: :delete, data:{ confirm: 'Delete the Lost Ad. Are you sure?'} %>
+    </button>
+    
+  <% end %>
 </div>

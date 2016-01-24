@@ -7,6 +7,7 @@ class Found < ActiveRecord::Base
   # , dependent: :destroy
 
   validates_presence_of :title
+  validates_presence_of :location
 
   mount_uploader :found_img, StuffImageUploader
 
