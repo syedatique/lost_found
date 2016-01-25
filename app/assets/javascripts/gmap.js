@@ -1,6 +1,7 @@
 // Here, we get the coordinates by entering an address into an input field.
 
 function codeAddress(geocoding, resultsMap){
+  console.log("codeAddress");
   var address = $("#map-canvas").data("lostlocation-data");
   console.log(address);
   geocoding.geocode({'address': address},function(results, status){

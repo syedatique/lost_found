@@ -4,7 +4,7 @@
       <div class="container" id="user-edit-page">
         <div class="thumbnail" >
           <% if current_user.user_img == nil %>
-            <img src="/user_profile/default-user-image.png" class="img-responsive img-circle"">
+            <img src="/user_profile/default-user-image.png" class="img-responsive img-circle">
           <% else %>
             <%= image_tag current_user.user_img.medium.url, class:"img-responsive img-circle" %>
           <% end %>
@@ -12,6 +12,7 @@
           <li class="list-group-item list-group-item-info"><strong>Username:  </strong> <%= current_user.username %></li>
           <li class="list-group-item list-group-item-info"><strong>Name:  </strong><%= current_user.name %></li>
           <li class="list-group-item list-group-item-info"><strong>Email:  </strong><%= current_user.email %></li>
+          <li class="list-group-item list-group-item-info"><strong>Phone:  </strong><%= current_user.phone %></li>
           <li class="list-group-item list-group-item-info"><strong>User location:  </strong><%= current_user.try(:user_location) %></li>
           </div>
 

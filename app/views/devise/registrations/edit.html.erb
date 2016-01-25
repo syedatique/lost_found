@@ -22,6 +22,17 @@
   </div>
   <br>
 
+  <div class="form-group">
+    <%= f.label :user_location, "Location: " %>
+    <%= f.text_field :user_location, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label :phone %>
+    <%= f.email_field :phone, class: 'form-control' %>
+  </div>
+  <br>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <span class="label label-info">Currently waiting confirmation for: <%= resource.unconfirmed_email %></span>
   <% end %>

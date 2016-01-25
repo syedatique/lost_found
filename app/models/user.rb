@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :founds
   mount_uploader :user_img, StuffImageUploader
 
+  before_create :set_default_role
+
   # validates_presence_of :name
 
   def self.from_omniauth(auth)
@@ -32,7 +34,7 @@ class User < ActiveRecord::Base
 
 
   def role?(role_to_compare_to)
-  role_to_compare_to.to_s == self.role.try(:name).to_s
+    role_to_compare_to.to_s == self.role.try(:name).to_s
   end
 
   private

@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
@@ -21,11 +22,12 @@
 
 
 $(function(){
-
+// $(document).on('page:load', function() {  
   var map = new google.maps.Map(document.getElementById('map-canvas'), {
     zoom: 12,
     center: {lat: -34.397, lng: 150.644}
   });
+  console.log("BOO!");
   var geocoding  = new google.maps.Geocoder();
   codeAddress(geocoding, map);
   
