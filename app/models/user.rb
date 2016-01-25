@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable,
   :omniauthable, omniauth_providers: [:facebook]    
 
+  acts_as_messageable
+
   belongs_to  :role
   has_many :losts
   has_many :founds
@@ -37,6 +39,12 @@ class User < ActiveRecord::Base
     role_to_compare_to.to_s == self.role.try(:name).to_s
   end
 
+  def mailboxer_email(object)
+    email
+  end
+
+
+  
   private
 
   def set_default_role

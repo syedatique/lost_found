@@ -15,6 +15,8 @@ gem 'will_paginate-bootstrap'
 gem 'social-share-button', '~> 0.1.10'
 gem 'pg_search'
 
+gem "mailboxer"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
