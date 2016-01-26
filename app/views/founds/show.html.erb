@@ -4,7 +4,7 @@
     <div class="col-sm-6 col-md-12">
       <div class="container" id="index-page">
         <div class="thumbnail" >
-          <%= image_tag @found.found_img.medium.url, class:"img-responsive img-rounded" %>
+          <%= image_tag @found.found_img.medium.url, class:"center-block" %>
           <div class="caption">
             <h3 class="bg-default" style="text-align: center;"><%= @found.title %></h3>
             <li class="list-group-item list-group-item-info"><strong>Category:</strong> <%= @found.category.try(:name) %></li>
@@ -28,8 +28,14 @@
             </div>
           </div>
           <div class="thumbnail" style="border:none;">
-            <%= link_to 'Send message', new_message_path(to: User.find_by_id(id = @found.user_id).id), class: 'btn btn-default btn-sm' %>
-            <%= link_to 'Edit', edit_found_path(@found), class: 'btn btn-info' if can? :update, Lost %>
+            <% if @found.user_id != nil %>
+              <%= link_to 'Send Message', new_message_path(to: User.find_by_id(id = @found.user_id).id), class: 'btn btn-primary' %>
+
+              <% if current_user == User.find_by_id(id = @found.user_id).id %>
+              <%= link_to 'Edit', edit_found_path(@found), class: 'btn btn-info' if can? :update, Found %>
+              <% end %>
+            <% end %>
+
             <%= link_to 'Back', founds_path, class: 'btn btn-info' %>
           </div>
         </div>
