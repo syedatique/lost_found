@@ -5,8 +5,8 @@ end
 
 User.delete_all
 u1 = User.create!(email: "advi@advi.com", username:"advi2008", password: "password", role: Role.find_by(name: 'registered'), name: 'Advi', phone: '07867564573',user_location: 'Glasgow, G4 0PA',  user_img: File.open(File.join(Rails.root,"/public/user_profile/advi2008.jpg")))
-u2 = User.create!(email: "alice@alice.com", username:"alice2008", password: "password", role: Role.find_by(name: 'registered'), name: 'Abby Wiseman', phone: '07867564573', user_location: 'Glasgow, G4 0PA',  user_img: File.open(File.join(Rails.root,"/public/user_profile/alice2008.jpg")))
-u3 = User.create!(email: "syed@syed.com", username:"infinite_syed", password: "password", role: Role.find_by(name: 'admin'), name: 'Syed Atique', phone: '07867564573', user_location: 'Glasgow, G4 0PA',  user_img: File.open(File.join(Rails.root,"/public/user_profile/syed.jpg")))
+u2 = User.create!(email: "alice@alice.com", username:"abby2008", password: "password", role: Role.find_by(name: 'registered'), name: 'Abby Wiseman', phone: '07867564573', user_location: 'Glasgow, G4 0PA',  user_img: File.open(File.join(Rails.root,"/public/user_profile/alice2008.jpg")))
+u3 = User.create!(email: "syed@syed.com", username:"admin_syed", password: "password", role: Role.find_by(name: 'admin'), name: 'Syed Atique', phone: '07867564573', user_location: 'Glasgow, G4 0PA',  user_img: File.open(File.join(Rails.root,"/public/user_profile/syed.jpg")))
 
 
 
