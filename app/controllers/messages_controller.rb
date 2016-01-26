@@ -6,7 +6,8 @@ class MessagesController < ApplicationController
    end
 
    def create
-     recipients = User.where(id: params['recipients'])
+    recipients = User.where(id: @lost.user_id)
+     # recipients = User.where(id: params['recipients'])
      # params['recipients'] is other users
      conversation = current_user.send_message(recipients, params[:message][:body], params[:message][:subject]).conversation
      flash[:success] = "Message has been sent!"

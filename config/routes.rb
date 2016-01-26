@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   
   resources :users
   
-
   resources :losts do 
     resources :comments
   end
@@ -17,28 +16,23 @@ Rails.application.routes.draw do
   end
 
   resources :categories
+
   resources :roles
+
   resources :searches
-  # resources :conversations, only: [:index, :show, :destroy]
-  # resources :messages
+
   resources :conversations, only: [:index, :show, :destroy] do
     member do
       post :reply
       post :restore
-      # delete :empty_trash
     end
     collection do
       delete :empty_trash
     end
-
   end
+  
   resources :messages, only: [:new, :create]
 
-  # resources :messages do
-  #   member do
-  #     post :new
-  #   end
-  # end
 
 
 
