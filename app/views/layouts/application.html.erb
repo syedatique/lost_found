@@ -121,7 +121,7 @@
     <div class="container">
       <h1 class="jumbotron-heading">LOST AND FOUND</h1><h2>A community Notice Board!</h2>
       <p class="text-muted" style="color:white;"> "Serve the community by giving Lost and Found information" </p>
-        <%= render partial: "layouts/menu"%>
+        <%= render partial: "layouts/menu" %>
     </div>
   </section>
 
@@ -139,56 +139,24 @@
 
   <%= yield %>
 
-
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    About Us </button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-        </div>
-        <div class="modal-body">
-          <%= render 'home/about_us'  %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <footer class="footer">
     <div class="container">
       <ul class="nav nav-pills">
-        <li><a class: 'btn btn-danger btn-sm' role="group" href="#">About</a></li>
-        <li><a class: 'btn btn-danger btn-sm' role="group" href="#">Tips</a></li>
-        <li><a class: 'btn btn-danger btn-sm' role="group" href="#">Useful Links</a></li>
-        <li><a class: 'btn btn-danger btn-sm' role="group" href="#">Contact</a></li>
-        <li style="margin: 15px 15px 50px 50px;"><%= social_share_button_tag("My Home Page", :url => "http://syedatique.github.io/") %></li>
+      <!-- Button trigger modal -->
+        <li><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#aboutus">About Us </button></li>
+        <li><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#tips">Tips </button></li>
+        <li><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#useful_links">Useful Links </button></li>
+        <li><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#private_policy">Private Policy </button></li>
+        <li><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#contact_us">Contact Us </button></li>
+
+        <li class= "pull-right"><%= social_share_button_tag("My Home Page", :url => "http://syedatique.github.io/") %></li>
       </ul>
     </div>
   </footer>
+
+  <%= render partial: "layouts/modal"  %>
+
 </div>
+
 </body>
 </html>
