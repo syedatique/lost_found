@@ -16,6 +16,7 @@ gem 'social-share-button', '~> 0.1.10'
 gem 'pg_search'
 
 gem "mailboxer"
+gem 'gravatar_image_tag'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

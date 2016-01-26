@@ -32,13 +32,13 @@ Rails.application.routes.draw do
     end
 
   end
-  # resources :messages, only: [:new, :create]
+  resources :messages, only: [:new, :create]
 
-  resources :messages do
-    member do
-      post :new
-    end
-  end
+  # resources :messages do
+  #   member do
+  #     post :new
+  #   end
+  # end
 
 
 
