@@ -1,7 +1,7 @@
 
 <div class="row form-inline" style="width: 100%;">
   <div class="col-xs-12 col-sm-6 col-md-6">
-    <%= form_tag(losts_path, method: "get", class: 'form-group') do %>
+    <%= form_tag(losts_path, method: "get", remote: true, class: 'form-group') do %>
     <button type="button" class="btn btn-default" aria-label="Left Align">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </button>
@@ -13,7 +13,7 @@
 
   <div class="col-xs-12 col-sm-6 col-md-6">
 
-    <%= form_tag(founds_path, method: "get", class: 'form-group') do %>
+    <%= form_tag(founds_path, method: "get", remote: true, class: 'form-group') do %>
     <button type="button" class="btn btn-default" aria-label="Left Align">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </button>

@@ -4,9 +4,9 @@
     <div class="col-sm-6 col-md-12">
       <div class="container" id="index-page">
         <div class="thumbnail" >
-        <h3 class="bg-default" style="text-align: center;">All LOST Posts</h3>
+        <!-- <h3 class="bg-default" style="text-align: center;">All LOST Posts</h3> -->
           <% if @search.search_losts.empty? %>
-          <h3 class="bg-default" style="text-align: center;">No Records Found</h3>
+          <h3 class="bg-default" style="text-align: center;"></h3>
           <% else %>
             <% @search.search_losts.each do |c| %>
             
@@ -34,9 +34,9 @@
     <div class="col-sm-6 col-md-12">
       <div class="container" id="index-page">
         <div class="thumbnail" >
-        <h3 class="bg-default" style="text-align: center;">All FOUND Posts</h3>
+        <!-- <h3 class="bg-default" style="text-align: center;">All FOUND Posts</h3> -->
           <% if @search.search_founds.empty? %>
-          <h3 class="bg-default" style="text-align: center;">No Records Found</h3>
+          <h3 class="bg-default" style="text-align: center;"></h3>
           <% else %>
             <% @search.search_founds.each do |c| %>
             

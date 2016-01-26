@@ -2,6 +2,7 @@ class LostsController < ApplicationController
   
   load_and_authorize_resource
   before_action :set_lost, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
 
   # GET /losts
   def index
@@ -13,6 +14,10 @@ class LostsController < ApplicationController
       flash[:notice] = "No ad posted in this category".html_safe if @losts.empty?
     else
       @losts = Lost.paginate(:page => params[:page], :per_page => 3).order('id DESC')
+    end
+
+    if request.xhr?
+      render :js, :partial => "index" 
     end
 
     

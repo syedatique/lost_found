@@ -2,6 +2,7 @@ class FoundsController < ApplicationController
 
   load_and_authorize_resource
   before_action :set_found, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
 
   # GET /founds
   def index
@@ -14,6 +15,11 @@ class FoundsController < ApplicationController
     else
       @founds = Found.paginate(:page => params[:page], :per_page => 3).order('id DESC')
     end
+
+    if request.xhr?
+      render :js, :partial => "index" 
+    end
+    
   end
 
   # GET /founds/1

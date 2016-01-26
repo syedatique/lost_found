@@ -17,6 +17,7 @@ gem 'pg_search'
 
 gem "mailboxer"
 gem 'gravatar_image_tag'
+gem 'dotenv-rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
