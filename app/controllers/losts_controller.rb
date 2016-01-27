@@ -19,20 +19,6 @@ class LostsController < ApplicationController
     if request.xhr?
       render :js, :partial => "index" 
     end
-
-    
-      # if params[:category_id]
-      #   @losts = Lost.where(:category_id => params[:category_id]).paginate(:page => params[:page], :per_page => 3).order('id DESC')
-      # else
-      #   @losts = Lost.paginate(:page => params[:page], :per_page => 3).order('id DESC')
-      # end
- 
-
-    # if params[:name]
-    #   @losts = Lost.where("title like ?", "%#{params[:name]}%").paginate(:page => params[:page], :per_page => 3).order('id DESC')
-    # else
-    #   @losts = Lost.paginate(:page => params[:page], :per_page => 3).order('id DESC')
-    # end
   end
 
   # GET /losts/1

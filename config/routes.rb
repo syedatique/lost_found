@@ -6,7 +6,6 @@ Rails.application.routes.draw do
                                     omniauth_callbacks: 'omniauth_callbacks'}
   
   resources :users
-  # resources :users, only: [:index]
   resources :losts do 
     resources :comments
   end

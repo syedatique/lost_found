@@ -22,7 +22,6 @@
 
 
 $(function(){
-// $(document).on('page:load', function() {  
   var map = new google.maps.Map(document.getElementById('map-canvas'), {
     zoom: 12,
     center: {lat: -34.397, lng: 150.644}

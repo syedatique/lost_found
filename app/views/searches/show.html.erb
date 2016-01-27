@@ -3,12 +3,10 @@
     <div class="col-sm-6 col-md-12">
       <div class="container" id="index-page">
         <div class="thumbnail" >
-        <!-- <h3 class="bg-default" style="text-align: center;">All LOST Posts</h3> -->
           <% if @search.search_losts.empty? %>
           <h3 class="bg-default" style="text-align: center;"></h3>
           <% else %>
             <% @search.search_losts.each do |c| %>
-            
             <%#= image_tag c.image.medium.url, class:"img-responsive img-rounded" %>
           <li class="list-group-item list-group-item-info"><strong>Title: </strong> <%= c.title %></li>
           <li class="list-group-item list-group-item-info"><strong>Location: </strong> <%= c.location %></li>
