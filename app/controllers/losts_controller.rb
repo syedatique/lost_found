@@ -7,7 +7,7 @@ class LostsController < ApplicationController
   # GET /losts
   def index
     if params[:name]
-      @losts = Lost.search("%#{params[:name]}%").paginate(:page => params[:page], :per_page => 3)
+      @losts = Lost.search("%#{params[:name]}%")
       flash[:notice] = "No search result found".html_safe if @losts.empty?
     elsif params[:category_id]
       @losts = Lost.where(:category_id => params[:category_id]).paginate(:page => params[:page], :per_page => 3).order('id DESC')

@@ -7,7 +7,6 @@ class Search < ActiveRecord::Base
       losts = Lost.where("title like ?", "SUMON")
     else
      losts = Lost.all
-   
      losts = losts.where("title like ?", "%#{keywords}%") if keywords.present?
      losts = losts.where("location like ?", "%#{location}%") if location.present?
      losts = losts.where("description like ?", "%#{description}%") if description.present?
@@ -26,7 +25,6 @@ class Search < ActiveRecord::Base
     if found_keywords == nil
       found = Found.where("title like ?", "SUMON")
     else
-    
     founds = Found.all
    
     founds = founds.where("title like ?", "%#{found_keywords}%") if found_keywords.present?
