@@ -1,7 +1,7 @@
 class Search < ActiveRecord::Base
 
   mount_uploader :image, StuffImageUploader
-  # def search_losts(keywords,location,email,name,phone,start_date,end_date)
+
   def search_losts
     if keywords == nil
       losts = Lost.where("title like ?", "SUMON")
@@ -22,7 +22,6 @@ class Search < ActiveRecord::Base
 
   end
 
-  # def search_founds(found_keywords,found_location,found_description,found_email,found_name,found_phone,found_start_date,found_end_date)
   def search_founds
     if found_keywords == nil
       found = Found.where("title like ?", "SUMON")

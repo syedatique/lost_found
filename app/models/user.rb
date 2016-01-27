@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   belongs_to  :role
   has_many :losts
   has_many :founds
+  
   mount_uploader :user_img, StuffImageUploader
 
   before_create :set_default_role
@@ -42,8 +43,6 @@ class User < ActiveRecord::Base
     email
   end
 
-
-  
   private
 
   def set_default_role

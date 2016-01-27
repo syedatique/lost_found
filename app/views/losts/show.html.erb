@@ -28,6 +28,8 @@
           </div>
         </div>
         <div class="thumbnail" style="border:none;">
+          <%= link_to 'Back', losts_path, class: 'btn btn-primary' %>
+
           <% if @lost.user_id != nil %>
             <%= link_to 'Send message', new_message_path(to: User.find_by_id(id = @lost.user_id).id), class: 'btn btn-primary' %>
 
@@ -35,8 +37,7 @@
             <%= link_to 'Edit', edit_lost_path(@lost), class: 'btn btn-info' if can? :update, Lost %>
             <% end %>
           <% end %>
-
-          <%= link_to 'Back', losts_path, class: 'btn btn-lg btn-info' %>
+          
         </div>
       </div>
     </div>

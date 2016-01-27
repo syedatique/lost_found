@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
   def create
     params.permit!
     @comment = @commentable.comments.new(params[:comment])
+    
     if @comment.save
       flash[:notice] = "Successfully created comment."
       redirect_to @commentable

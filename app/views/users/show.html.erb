@@ -4,7 +4,7 @@
       <div class="container" id="user-edit-page">
         <div class="thumbnail" >
           <% if current_user.user_img == nil %>
-            <img src="/user_profile/default-user-image.png" class="img-responsive img-circle">
+            <img src="/user_profile/default-user-image.png" alt="No User Profile Picture" class="img-responsive img-circle">
           <% else %>
             <%= image_tag current_user.user_img.medium.url, class:"img-responsive img-circle" %>
           <% end %>

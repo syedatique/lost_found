@@ -79,6 +79,8 @@
 
 .jumbotron-heading {
   font-weight: 300;
+  text-shadow: 0 20px 20px rgba(100,200,20,.34);
+
 }
 
 .jumbotron .container {
@@ -170,16 +172,21 @@
     margin-right: auto;
 }
 
-
-
 /******** sign up form********/
 #sign-up-form {
   width:75%;
   padding: 0 auto;
 }
 
+/********* PAnel Body of Modal********/
+.panel-body {
+  background-color: #7FFFD4;
+}
 
-
+/******** Search*******/
+#search {
+  padding-top:20px;
+}
 
 
 
