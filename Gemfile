@@ -19,6 +19,9 @@ gem "mailboxer"
 gem 'gravatar_image_tag'
 gem 'dotenv-rails'
 
+gem 'rails_12factor', group: :production
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
