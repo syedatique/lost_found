@@ -1,10 +1,11 @@
 <h2 class="caption">Advanced Search: </h2>
 
-<div class="row form-inline" >
-  <div class="col-xs-12 col-sm-6 col-md-6" style="padding-left:50px;">
-    <h4 class="caption">LOST Item Search</h4><br />
+<div class="row" >
+  <div class="col-xs-12 col-sm-6 col-md-6" style="padding-left:60px;">
     <div class="form-group">
       <%= simple_form_for(@search, defaults: { input_html: { class: 'form-horizontal'}}) do |f| %>
+
+      <%= f.association :search_category, as: :radio_buttons , hint: 'Please select an catagory', class: 'form-control' %><br /><br />
       <%= f.input :keywords, label: 'Keywords  :', placeholder: 'e.g., Item name',class: 'form-control'  %><br /><br />
       <%= f.input :location, label: 'Location  : ', placeholder: 'Nearby location search.', class: 'form-control'%><br /><br />
       <%= f.input :description, label: 'Description  : ', placeholder: 'Search in description field.', class: 'form-control'%><br /><br />
@@ -17,26 +18,7 @@
       <% end  %>
     </div>
   </div>
-
-  <div class="col-xs-12 col-sm-6 col-md-6">
-    <h4 class="caption">FOUND Item Search</h4><br />
-    <div class="form-group">
-      <%= simple_form_for(@search, defaults: { input_html: { class: 'form-horizontal'}}) do |f| %>
-      <%#= f.input :image, label: 'Image', class: 'form-control'  %>
-      <%= f.input :found_keywords, label: 'Keywords  : ', placeholder: 'e.g., Item name',class: 'form-control'  %><br /><br />
-      <%= f.input :found_location, label: 'Location  : ', placeholder: 'Nearby location search.', class: 'form-control'%><br /><br />
-      <%= f.input :found_description, label: 'Description  : ', placeholder: 'Search in description field.', class: 'form-control'%><br /><br />
-      <%= f.input :found_name, label: 'Contact Name  : ', placeholder:'Persons name if you know', class: 'form-control'  %><br /><br />
-      <%= f.input :found_email, label: 'Contact Email  : ', placeholder: 'Persons email if you know', class: 'form-control'  %><br /><br />
-      <%= f.input :found_phone, label: 'Contact Phone  : ', placeholder: 'Persons phone number if you know', class: 'form-control'  %><br /><br />
-      <%= f.input :found_start_date, label: 'Start Date: ', class: 'form-control' %><br /><br />
-      <%= f.input :found_end_date, label: 'End Date: ', class: 'form-control' %><br /><br />
-      <%= f.button :submit, "Submit", class: 'btn btn-success'  %><br />
-      <% end  %>
-    </div>
-  </div>
 </div>
-
 
 <div class="thumbnail" style="border:none;">
   <br />

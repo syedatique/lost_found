@@ -9,6 +9,9 @@ u2 = User.create!(email: "abby@abby.com", username:"abby2008", password: "passwo
 u3 = User.create!(email: "syed@syed.com", username:"admin_syed", password: "password", role: Role.find_by(name: 'admin'), name: 'Syed Atique', phone: '07867564573', user_location: 'Glasgow, G4 0PA',  user_img: File.open(File.join(Rails.root,"/public/user_profile/syed.jpg")))
 u4 = User.create!(email: "kieren@kieren.com", username:"kieren2008", password: "password", role: Role.find_by(name: 'registered'), name: 'Kieren', phone: '07867564573',user_location: 'Glasgow, G4 0PA',  user_img: File.open(File.join(Rails.root,"/public/user_profile/advi2008.jpg")))
 
+SearchCategory.delete_all
+SearchCategory.create!(name: "lost")
+SearchCategory.create!(name: "found")
 
 
 Category.delete_all

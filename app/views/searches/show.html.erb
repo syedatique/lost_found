@@ -4,20 +4,22 @@
       <div class="container" id="index-page">
         <div class="thumbnail" >
           <% if @search.search_losts.empty? %>
-          <h3 class="bg-default" style="text-align: center;"></h3>
+            <h3 class="bg-default" style="text-align: center;">No Result Found</h3>
           <% else %>
             <% @search.search_losts.each do |c| %>
-            <%#= image_tag c.image.medium.url, class:"img-responsive img-rounded" %>
-          <li class="list-group-item list-group-item-info"><strong>Title: </strong> <%= c.title %></li>
-          <li class="list-group-item list-group-item-info"><strong>Location: </strong> <%= c.location %></li>
-          <li class="list-group-item list-group-item-info"><strong>Description: </strong> <%= c.description %></li>
-          <li class="list-group-item list-group-item-info"><strong>Date: </strong> <%= c.lost_date.strftime("%d %B %Y") %></li>
-          <li class="list-group-item list-group-item-info"><strong>Contact Name: </strong> <%= c.name %></li>
-          <li class="list-group-item list-group-item-info"><strong>Contact Email: </strong> <%= c.email %></li>
-          <li class="list-group-item list-group-item-info"><strong>Contact Phone: </strong> <%= c.phone %></li><br />
-          <br />
-          <%= link_to 'Show', lost_path(c), class: 'btn btn-success' %>
-
+            <li class="list-group-item list-group-item-info"><strong>Title: </strong> <%= c.title %></li>
+            <li class="list-group-item list-group-item-info"><strong>Location: </strong> <%= c.location %></li>
+            <li class="list-group-item list-group-item-info"><strong>Description: </strong> <%= c.description %></li>
+            <li class="list-group-item list-group-item-info"><strong>Contact Name: </strong> <%= c.name %></li>
+            <li class="list-group-item list-group-item-info"><strong>Contact Email: </strong> <%= c.email %></li>
+            <li class="list-group-item list-group-item-info"><strong>Contact Phone: </strong> <%= c.phone %></li>
+            <!-- <li class="list-group-item list-group-item-info"><strong>Date: </strong> <%#= c.lost_date.strftime("%d %B %Y") %></li><br /> -->
+            <br />
+            <% if @search.search_category_id == 1 %>
+              <%= link_to 'Show', lost_path(c), class: 'btn btn-success' %>
+            <% else %>
+              <%= link_to 'Show', found_path(c), class: 'btn btn-success' %>
+            <% end %>
           <% end %>
         <% end %>
         </div>
@@ -27,33 +29,4 @@
 </div>
 
 
-<div class="container home">
-  <div class="row">
-    <div class="col-sm-6 col-md-12">
-      <div class="container" id="index-page">
-        <div class="thumbnail" >
-        <!-- <h3 class="bg-default" style="text-align: center;">All FOUND Posts</h3> -->
-          <% if @search.search_founds.empty? %>
-          <h3 class="bg-default" style="text-align: center;"></h3>
-          <% else %>
-            <% @search.search_founds.each do |c| %>
-            
-            <%#= image_tag c.image.medium.url, class:"img-responsive img-rounded" %>
-          <li class="list-group-item list-group-item-info"><strong>Title: </strong> <%= c.title %></li>
-          <li class="list-group-item list-group-item-info"><strong>Location: </strong> <%= c.location %></li>
-          <li class="list-group-item list-group-item-info"><strong>Description: </strong> <%= c.description %></li>
-          <li class="list-group-item list-group-item-info"><strong>Date: </strong> <%= c.found_date.strftime("%d %B %Y") %></li>
-          <li class="list-group-item list-group-item-info"><strong>Contact Name: </strong> <%= c.name %></li>
-          <li class="list-group-item list-group-item-info"><strong>Contact Email: </strong> <%= c.email %></li>
-          <li class="list-group-item list-group-item-info"><strong>Contact Phone: </strong> <%= c.phone %></li><br />
-          <br />
-          <%= link_to 'Show', found_path(c), class: 'btn btn-success' %>
-
-          <% end %>
-        <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
