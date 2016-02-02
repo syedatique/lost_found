@@ -13,11 +13,12 @@
             <li class="list-group-item list-group-item-info"><strong>Contact Name: </strong> <%= c.name %></li>
             <li class="list-group-item list-group-item-info"><strong>Contact Email: </strong> <%= c.email %></li>
             <li class="list-group-item list-group-item-info"><strong>Contact Phone: </strong> <%= c.phone %></li>
-            <!-- <li class="list-group-item list-group-item-info"><strong>Date: </strong> <%#= c.lost_date.strftime("%d %B %Y") %></li><br /> -->
-            <br />
+            
             <% if @search.search_category_id == 1 %>
+            <li class="list-group-item list-group-item-info"><strong>Date: </strong> <%= c.lost_date.strftime("%d %B %Y") %></li><br />
               <%= link_to 'Show', lost_path(c), class: 'btn btn-success' %>
             <% else %>
+            <li class="list-group-item list-group-item-info"><strong>Date: </strong> <%= c.found_date.strftime("%d %B %Y") %></li><br />
               <%= link_to 'Show', found_path(c), class: 'btn btn-success' %>
             <% end %>
           <% end %>
