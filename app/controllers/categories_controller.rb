@@ -45,5 +45,4 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name, :category_img)
   end
 
-
 end

@@ -79,6 +79,5 @@ class FoundsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def found_params
       params.require(:found).permit(:found_img, :title, :found_date, :location, :description, :contact_info, :user_id, :category_id, comments_attributes: :content)
-      # :comments, :comments_attributes, :commentable_id, :commentable_type, 
     end
 end

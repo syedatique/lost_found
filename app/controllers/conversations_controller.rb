@@ -65,6 +65,4 @@ class ConversationsController < ApplicationController
     end
     @box = params[:box]
   end
-
-
 end

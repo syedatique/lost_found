@@ -16,11 +16,6 @@
           <li class="list-group-item list-group-item-info"><strong>User location:  </strong><%= current_user.try(:user_location) %></li>
           </div>
 
-          <div>
-            <%#= Lost.joins(:user).where(users: {name: 'current_user.try(:name)' })  %>
-            <%#= Lost.joins(:user).where(users: {name: 'Abby Wiseman'}) %>
-          </div>
-
           <div class="thumbnail" style="border:none;">
             <%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-info' if can? :update, User %>
           </div>
