@@ -23,10 +23,9 @@
 
 $(function(){
   var map = new google.maps.Map(document.getElementById('map-canvas'), {
-    zoom: 12,
+    zoom: 15,
     center: {lat: -34.397, lng: 150.644}
   });
-  console.log("BOO!");
   var geocoding  = new google.maps.Geocoder();
   codeAddress(geocoding, map);
 
