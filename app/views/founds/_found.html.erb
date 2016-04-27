@@ -17,7 +17,7 @@
   <% if can? :delete, Lost %>
     <button type="button" class="btn btn-default" aria-label="Left Align">
       <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-      <%= link_to 'Destroy', lost_path(lost), method: :delete, data:{ confirm: 'Delete the Lost Ad. Are you sure?'} %>
+      <%= link_to 'Destroy', found_path(found), method: :delete, data:{ confirm: 'Delete the Lost Ad. Are you sure?'} %>
     </button>
   <% end %>
 

@@ -19,7 +19,7 @@ gem "mailboxer"
 gem 'gravatar_image_tag'
 gem 'dotenv-rails'
 
-# gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production
 
 
 

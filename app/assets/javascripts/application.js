@@ -29,5 +29,5 @@ $(function(){
   var geocoding  = new google.maps.Geocoder();
   codeAddress(geocoding, map);
 
-  $( "#datepicker" ).datepicker();
+  // $( "#datepicker" ).datepicker();
 });
