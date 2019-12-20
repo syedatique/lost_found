@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'simple_form'
+#gem 'simple_form'
+gem "simple_form", ">= 5.0.0"
 gem 'devise'
 gem 'cancancan'
 gem 'carrierwave'
